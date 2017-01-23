@@ -41,9 +41,6 @@ function calculateScores(players){
     players[1].followers * 3 + players[1].totalStars
   ]
 }
-
-
-
 var helpers = {
   getPlayersInfo: function(players){
     return axios.all(players.map(function(username){
@@ -58,13 +55,13 @@ var helpers = {
   },
 
   battle: function(players){
-    var playerOneData = getPlayersData(player[0]);
-    var playerTwoData = getPlayersData(player[1]);
+    var playerOneData = getPlayersData(players[0]);
+    var playerTwoData = getPlayersData(players[1]);
 
     return axios.all([playerOneData, playerTwoData])
       .then(calculateScores)
       .catch(function(err){
-        console.warn('Error in getPlayersData', err);
+        console.warn('Error in getPlayersData', err)
     })
   }
 };

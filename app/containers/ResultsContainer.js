@@ -1,5 +1,6 @@
 var React = require('react');
 var Results = require('../components/Results.js');
+var githubHelpers = require('../utils/githubHelpers.js');
 
 var ResultsContainer = React.createClass({
     getInitialState: function(){
